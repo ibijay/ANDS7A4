@@ -24,20 +24,20 @@ public class ActSQLiteOpenHelper extends SQLiteOpenHelper {
 
     private static final String [] columns = {name_id,name_fname,name_lname};
 
-    public ActSQLiteOpenHelper(Context context){super(context, database_name,null,database_version );}
+    public ActSQLiteOpenHelper(Context context){super(context, database_name, null, database_version);}
 
     @Override
     public void onCreate(SQLiteDatabase db){
 
-        String create_names_table = "CREATE TABLE " + table_name + " ( " + name_id + " INTEGER PRIMARY KEY AUTOINCREAMENT, " + name_fname +" TEXT, " + name_lname +  " TEXT )";
+        String create_names_table = "CREATE TABLE " + table_name + " ( " + name_id + " INTEGER PRIMARY KEY AUTOINCREMENT, " + name_fname +" TEXT, " + name_lname +  " TEXT )";
         db.execSQL(create_names_table);
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
-        String drop_names_table = "DROP TABLE IF EXISTS " + table_name;
-        db.execSQL(drop_names_table);
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
     }
+
 
     public void createName(Name name){
         SQLiteDatabase db = this.getWritableDatabase();

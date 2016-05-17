@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MyApp_Names</string>
+    <string name="btnDisplayNames">Display Names</string>
 </resources>
